@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Haven - Enhanced Features</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #EDE7F6;
+      color: #5E35B1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #4A148C;
+      margin-bottom: 20px;
+    }
+    .time-container {
+      border: 2px solid #7E57C2;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+      background-color: #D1C4E9;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    #timeDisplay {
+      font-size: 1.2rem;
+      color: #311B92;
+    }
+    img {
+      width: 300px;
+      height: auto;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    #hoverText {
+      font-size: 1.2rem;
+      color: #7B1FA2;
+      margin-top: 10px;
+      display: none;
+    }
+    button {
+      background-color: #8E24AA;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #6A1B9A;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      transition: color 0.3s;
+    }
+  </style>
+</head>
+<body onclick="changeBackgroundColor()">
+  <h1>Welcome to the Book Haven</h1>
+
+  <!-- Time Container -->
+  <div class="time-container">
+    <div id="timeDisplay">Current Time: Loading...</div>
+  </div>
+
+  <!-- Image with Hover Text -->
+  <img 
+    src="book.png" 
+    alt="Book Cover" 
+    onmouseover="showText()" 
+    onmouseout="hideText()"
+  />
+  <p id="hoverText">Books are treasures waiting to be discovered!</p>
+
+  <!-- Change Background Color Button -->
+  <button>Click anywhere to change the background color!</button>
+
+  <!-- Text Change on Hover -->
+  <h2 id="hoverTitle">Hover over me to discover magic!</h2>
+
+  <script>
+    // Dynamic Time Display
+    function updateTime() {
+      const now = new Date();
+      document.getElementById("timeDisplay").textContent = `Current Time: ${now.toLocaleTimeString()}`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Display Hover Text
+    function showText() {
+      document.getElementById("hoverText").style.display = "block";
+    }
+    function hideText() {
+      document.getElementById("hoverText").style.display = "none";
+    }
+
+    // Change Background Color Anywhere
+    function changeBackgroundColor() {
+      const colors = ["#EDE7F6", "#D1C4E9", "#B39DDB", "#9575CD", "#7E57C2"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+
+    // Change Text on Hover
+    const hoverTitle = document.getElementById("hoverTitle");
+    hoverTitle.onmouseover = () => (hoverTitle.textContent = "Books open doors to imagination!");
+    hoverTitle.onmouseout = () => (hoverTitle.textContent = "Hover over me to discover magic!");
+  </script>
+</body>
+</html>
