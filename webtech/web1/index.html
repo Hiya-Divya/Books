@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Mapping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4a90e2, #8e44ad);
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            padding: 20px;
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        a {
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Explore the Books</h1>
+    <p>Click on the books to learn more!</p>
+    <img src="image.png" usemap="#bookmap" alt="Books">
+    <map name="bookmap">
+        <!-- Rectangular mapping for the English book -->
+        <area shape="rect" coords="24,43,152,32" href="https://en.wikipedia.org/wiki/English_language" alt="English Book">
+        
+        <!-- Polygon mapping for Chemistry and Physics -->
+        <area shape="poly" coords="39,60,30,75,23,77,24,93,28,101,32,115,157,110,157,67,148,56,146,40" href="https://en.wikipedia.org/wiki/Relationship_between_chemistry_and_physics" alt="Chemistry and Physics">
+
+        <!-- Circular mapping for History -->
+        <area shape="circle" coords="91,128,16" href="https://en.wikipedia.org/wiki/History" alt="History">
+    </map>
+</body>
+</html>
