@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>And Then There Were None - Book Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Form Validation
+            let isValid = true;
+
+            // Name validation
+            const name = document.getElementById('name').value.trim();
+            if (!name) {
+                document.getElementById('nameError').textContent = 'Please enter your name.';
+                isValid = false;
+            }
+
+            // Rating validation
+            const rating = document.getElementById('rating').value;
+            if (!rating) {
+                document.getElementById('ratingError').textContent = 'Please select a rating.';
+                isValid = false;
+            }
+
+            // Mood validation
+            const mood = document.getElementById('mood').value;
+            if (!mood) {
+                document.getElementById('moodError').textContent = 'Please select how the book made you feel.';
+                isValid = false;
+            }
+
+            // Character validation
+            const character = document.querySelector('input[name="character"]:checked');
+            if (!character) {
+                document.getElementById('characterError').textContent = 'Please select a character.';
+                isValid = false;
+            }
+
+            // Cover quiz validation
+            const coverQuiz = document.querySelector('input[name="cover_quiz"]:checked');
+            if (!coverQuiz) {
+                document.getElementById('coverError').textContent = 'Please select a cover.';
+                isValid = false;
+            }
+
+            // If form is valid, display success message
+            if (isValid) {
+                alert('Form Submitted!');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>And Then There Were None - Agatha Christie</h1>
+        <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">What do people call you?:</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                <span id="nameError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="rating">How would you rate the book?</label>
+                <select name="rating" id="rating" required>
+                    <option value="" disabled selected>Select rating</option>
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+                <span id="ratingError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="mood">How did the book make you feel?</label>
+                <select name="mood" id="mood" required>
+                    <option value="excited">🤩 Excited</option>
+                    <option value="suspenseful">😰 Suspenseful</option>
+                    <option value="shocked">😲 Shocked</option>
+                    <option value="satisfied">😌 Satisfied</option>
+                    <option value="confused">🤔 Confused</option>
+                </select>
+                <span id="moodError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label>Which character did you find most intriguing?</label>
+                <div class="character-options">
+                    <label><input type="radio" name="character" value="vera_clyde"> Vera Claythorne</label>
+                    <label><input type="radio" name="character" value="roger_davies"> Roger Davies</label>
+                    <label><input type="radio" name="character" value="emily_brent"> Emily Brent</label>
+                    <label><input type="radio" name="character" value="blore"> Blore</label>
+                    <label><input type="radio" name="character" value="lombard"> Lombard</label>
+                </div>
+                <span id="characterError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="cover_quiz">Which of these book covers is from 'And Then There Were None'?</label>
+                <div class="cover-options">
+                    <label><input type="radio" name="cover_quiz" value="cover1"><img src="cover.png" alt="Cover 1"></label>
+                    <label><input type="radio" name="cover_quiz" value="cover2"><img src="cover1.png" alt="Cover 2"></label>
+                    <label><input type="radio" name="cover_quiz" value="cover3"><img src="cover2.png" alt="Cover 3"></label>
+                </div>
+                <span id="coverError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="quotes">Share your favorite quote from the book:</label>
+                <textarea name="quotes" id="quotes" placeholder="E.g., 'The truth was that they were not safe anywhere...'" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="recommendation">Speak about why others should read this book:</label>
+                <textarea name="recommendation" id="recommendation" placeholder="Suggest a book you think others would enjoy" rows="4"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
