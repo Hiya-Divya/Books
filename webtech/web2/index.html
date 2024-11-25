@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Theme</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+    <style>
+        /* Internal CSS */
+        .book-list {
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            max-width: 600px;
+            background-color: #f8f5f1;
+        }
+        .book-list h2 {
+            text-align: center;
+            color: #4b0082;
+        }
+        .book-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .book-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: #3e4c59; text-align: center;">Welcome to the Book Haven</h1> <!-- Inline CSS -->
+    </header>
+
+    <section class="book-list">
+        <h2>Book Recommendations of the day</h2>
+        <div class="book-item">
+            <strong>Title:</strong> To Kill a Mockingbird<br>
+            <strong>Author:</strong> Harper Lee
+        </div>
+        <div class="book-item">
+            <strong>Title:</strong> 1984<br>
+            <strong>Author:</strong> George Orwell
+        </div>
+        <div class="book-item">
+            <strong>Title:</strong> The Great Gatsby<br>
+            <strong>Author:</strong> F. Scott Fitzgerald
+        </div>
+    </section>
+</body>
+</html>
