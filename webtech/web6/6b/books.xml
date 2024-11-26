@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book>
+        <title>Radio Silence</title>
+        <author>Alice Oseman</author>
+        <genre>Young Adult</genre>
+        <published_year>2016</published_year>
+    </book>
+    <book>
+        <title>1984</title>
+        <author>George Orwell</author>
+        <genre>Dystopian</genre>
+        <published_year>1949</published_year>
+    </book>
+</library>
